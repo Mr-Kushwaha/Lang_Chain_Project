@@ -20,4 +20,4 @@ validate_template=True
 )
 # insteed of saving the template to a file, we can use it directly in your code with the  formated string method. However, but using template we can save the prompt for later use and also we can use it in other parts of the code and set some guiedlines for the prompt.
 
-template.save('template.json')
+template.save('templates.json')

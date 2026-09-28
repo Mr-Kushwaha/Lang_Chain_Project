@@ -39,8 +39,14 @@ Max_completion_tokens: it just like how many words you want in your response
 
 Close Source Model: In these models we have to communicate via api and there is some cost related to it and we can not make changes(OpenAi, Claude)
 
-image
+img
 
 
 Prompts:
+
+
+ChatBot:
+continous conversation between ai and humans
+langChain provides the fecelity to do a conversation with ai using system message, humand message and ai message
+system message: this is the initial message at the starting of the conversation with ai (for example when we tell the ai agent to behave like something to aquire some skills like 'you are an 5 year of senior engineer now rate my pr' by this system message ai agent behave like 5yoexperienced engineer and rate the users pr)
 
