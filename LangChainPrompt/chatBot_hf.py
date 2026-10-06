@@ -1,24 +1,18 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import PromptTemplate
+from langchain_huggingface import ChatHuggingFace, HuggingFacePipeline
 from dotenv import load_dotenv
-import streamlit as st
+import torch
 
 load_dotenv()
-
-# -----------------------------------
-# Initialize Gemini
-# -----------------------------------
-
-model = ChatGoogleGenerativeAI(
-    model="gemini-3.6-flash"
+llm = HuggingFacePipeline.from_model_id(
+    model_id="meta-llama/Llama-3.2-1B-Instruct",
+    task="text-generation",
+    pipeline_kwargs={
+        "max_new_tokens": 200,
+        "temperature": 0.9
+    }
 )
-# this code does not store the chat history so we can not continue with the previous conversation. If we want to store the chat history we can use the memory class from langchain_core.memory module. This will allow us to store the chat history and continue with the previous conversation.
-# while True:
-#     user_input = input("You: ")
-#     if user_input.lower() == 'exit':
-#         break
-#     result = model.invoke(user_input)
-#     print("Response from Gemini: ", result.content[0]['text'])
+
+model = ChatHuggingFace(llm=llm)
 
 chat_history = []
 while True:
@@ -27,7 +21,8 @@ while True:
     if user_input.lower() == 'exit':
         break
     result = model.invoke(chat_history)
-    res=result.content[0]['text']
+    print(result)
+    res=result.content
     chat_history.append(res)
     print("Response from Gemini: ", res)
 
