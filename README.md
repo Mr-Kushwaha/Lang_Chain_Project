@@ -51,3 +51,14 @@ langChain provides the fecelity to do a conversation with ai using system messag
 system message: this is the initial message at the starting of the conversation with ai (for example when we tell the ai agent to behave like something to aquire some skills like 'you are an 5 year of senior engineer now rate my pr' by this system message ai agent behave like 5yoexperienced engineer and rate the users pr)
 
 message place holder: it loads the previous chat of the user in between it's current chat(or session) for example : we are making chat bot for the amazon comapany and user ask a question when he will get the refund and bot told that which in 3 days but the refund didn;t occur so user again come and ask the status for refund so the chatbot is taking reference from the previos chat by loading it from db
+
+
+
+Structured Output: In langchain structured output refers to the practice of having language models return responses in a well defined format (like: json) this make the model o/p easier to parse
+
+where we can use SO:
+data extraction, api building, agents
+for example: we have simple math agent which use calculator we told agent to find sqrt of 2 so using structured outout agent filter the operator and operand so calculator can perform their task
+
+
+
