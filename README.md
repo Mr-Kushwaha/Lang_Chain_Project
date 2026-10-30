@@ -1,5 +1,7 @@
 Agentic Ai Tutorial:
 
+Command To move in virtual environment: .\venv\Scripts\Activate.ps1
+
 foundation model is like llm(not only for text, it also for images, audios, etc.) and it is 2 types
 
 user perspective(for using llms): prompt engineer, rag, ai agents(do some work using llms), vector database(for implementing rag), fine tuning
@@ -60,5 +62,14 @@ where we can use SO:
 data extraction, api building, agents
 for example: we have simple math agent which use calculator we told agent to find sqrt of 2 so using structured outout agent filter the operator and operand so calculator can perform their task
 
+In SO, in a backend a kind of prompt generation is happening and that prompt tells the model to genrate SO
 
+In Annotated Dict we can specify our json format so tha model can understood the expectation of this perticular field(or key)
+
+Typedict is not strict even we mention the value is str model will be give it in int and does not give any error. so, we can use pydentic for this coz in pydantic we can not change the type it will give error
+
+SO may use as 3 ways dict, pydentic, json
+Opensource models does not capable to give the structured output. we can achive this by Output Parsers
+  
+OutputParser: it is a some class in langchain with the help of this we can convert rae llm responce to so. Thy ensure consistency, validation, and esae of use in application.
 
